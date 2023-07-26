@@ -390,10 +390,11 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 .reveal #bio img {
   float: left;
-  width: 40%;
+  width: 35%;
+  margin-right: 1em;
 }
 .reveal #bio .info {
-  padding-top: 10%;
+  padding-top: 4em;
 }
 .reveal #bio .info h1 {
   color: #0C1B2C;
