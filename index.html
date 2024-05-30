@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black-contrast.css">
+		<link rel="stylesheet" href="dist/theme/personal.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -16,13 +17,16 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section id="cover">
+				<section id="cover"
+					data-background-image="images/abstract-backgrounds/47B8D1.svg"
+					data-background-size="cover">
 					<h1>The ABC of DX</h1>
 					<h3>Mike Elsmore</h3>
-					<p>Last update: 28/07/2023</p>
+				</section>
+				<section id="whoops" class="template white">
+					<img src="images/bio/collapsed-mike.jpg" />
 				</section>
 				<section id="bio" class="template white">
-					<img src="images/bio/mike-elsmore.png" />
 					<div class="info">
 						<h1>Developer Advocate</h1>
 						<h2>@ukmadlz</h2>
@@ -30,16 +34,18 @@
 						<code>npx ukmadlz</code>
 					</div>
 				</section>
-				<section class="template white" >
-					<img src="images/gifs/pace-yourself.gif" class="r-stretch" />
+				<section id="bio" class="template white">
+					<pre><code data-line-numbers>npx ukmadlz</code></pre>
 				</section>
-				<section>
-					<img src="images/infobip/orange-and-white.png" />
+				<section data-background-image="images/gifs/independence-day.webp" >
+					<h1>Independent</h1>
+				</section>
+				<section data-background-image="images/gifs/did-we-just-become-friends.webp" >
 				</section>
 				<section data-background-image="images/gifs/84-years.gif" >
-					<img src="images/infobip/orange-and-white.png" />
+					<h1>It's been 16 years</h1>
 				</section>
-				<section class="template white" >
+				<!-- <section class="template white" >
 					<img src="images/infobip-founding.png" />
 				</section>
 				<section class="template white" >
@@ -49,13 +55,14 @@
 					<aside class="notes">
 						Hired in 2021
 					</aside>
-				</section>
+				</section> -->
 				<section class="template orange">
-					<h1>What is DX?</h1>
+					<h1>What is <u class="D0D91F">DX</u>?</h1>
 				</section>
 				<section class="template white">
-					<h1>DevX</h1>
-					<h1>Developer Experience</h1>
+					<h1 class="fragment">DevX</h1>
+					<h1 class="fragment">DevEx</h1>
+					<h1 class="fragment">Developer Experience</h1>
 				</section>
 				<section class="template blue">
 					<img class="r-stretch" src="images/gifs/head-scratching.gif"/>
@@ -231,26 +238,6 @@
 				width: 1920,
   				height: 1080,
 			});
-			const hideHeaderAndFooter = (event) => {
-				switch(event.currentSlide.id) {
-					case "cover":
-						document.getElementsByTagName("header")[0].style.display = 'none';
-						document.getElementsByTagName("footer")[0].style.display = 'none';
-						break;
-					default:
-						document.getElementsByTagName("header")[0].style.display = 'block';
-						document.getElementsByTagName("footer")[0].style.display = 'block';
-				}
-				if (event.currentSlide.className.includes('orange')) {
-					document.getElementById('header-logo').src = "images/infobip/white-and-white.png"
-				} else if (event.currentSlide.className.includes('white')) {
-					document.getElementById('header-logo').src = "images/infobip/orange-and-black.png"
-				} else {
-					document.getElementById('header-logo').src = "images/infobip/orange-and-white.png"
-				}
-			}
-			Reveal.on('ready', hideHeaderAndFooter);
-			Reveal.on('slidechanged', hideHeaderAndFooter);
 		</script>
 	</body>
 </html>
