@@ -96,209 +96,25 @@
 					<h1><u class="u8CDCB6">Vibe</u> Coding</h1>
 					<div class="fragment">
 						<h1>=</h1>
-						<h1>🐂💩</h1>
+						<h1><u class="uBB98B6">🐂💩</u></h1>
 					</div>
 				</section>
 				<section>
-					<h1><u class="uBB98B6" >FaaS</u></h1>
-					<h2 class="fragment">Functions-as-a-Service</h2>
-				</section>
-				<section class="template white">
-					<blockquote>"Function as a service (FaaS) is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage application functionalities without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. Building an application following this model is one way of achieving a "serverless" architecture, and is typically used when building microservices applications."</blockquote>
-					<p>Some people on Wikipedia - https://en.wikipedia.org/wiki/Function_as_a_service</p>
+					<img class="r-stretch" src="images/lovable-to-cursor.jpeg"/>
 				</section>
 				<section>
-					<a href="https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/">https://whitep4nth3r.com/blog/what-is-the-edge-serverless-functions/</a>
+					<h1><u class="uFFBE54">Context</u></h1>
 				</section>
 				<section>
-					<h1>Small units of code</h1>
+					<img class="r-stretch" src="images/gifs/another-problem.gif"/>
 				</section>
 				<section>
-					<img class="r-stretch" src="images/gifs/many-units.webp"/>
-				</section>
-				<section data-background-image="images/gifs/the-edge.webp">
-					 <h1>The Edge</h1>
+					<h1>Vendor <u class="uFFBE54">Lock In</u></h1>
 				</section>
 				<section>
-					<h1><u class="uF6E036">Edge Computing</u></h1>
+					<img class="r-stretch" src="images/gifs/unethical-corporations.gif"/>
 				</section>
-				<section>
-					<h1>CDN</h1>
-					<h2>Content Delivery Network</h2>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/but-why.webp"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/dont-do-it.webp"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/hand-wavy.webp"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/baneblade.jpg"/>
-				</section>
-				<section>
-					<h1><u class="uFC7753">Don't</u> put your entire application in an edge function</h1>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/expensive.webp"/>
-				</section>
-				<section>
-					<h1>Image manipulation</h1>
-				</section>
-				<section>
-					<h1>Localisation</h1>
-					<p class="fragment" >(I know I used the UK English spelling)</p>
-				</section>
-				<section>
-					<h1>Personalisation</h1>
-				</section>
-				<section>
-					<h1>Light weight authorisation</h1>
-				</section>
-				<section>
-					<h1><u class="uFFBE54">Really</u> light weight routing and logging</h1>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/flamethrower.webp"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/gotcha.webp"/>
-				</section>
-				<section>
-					<h1><u class="u8CDCB6" >Mostly</u> JavaScript</h1>
-				</section>
-				<section>
-					<h1><u class="uFFBE54" >Mostly</u> HTTP only</h1>
-				</section>
-				<section>
-					<h1><u class="uBB98B6" >Limited</u> request sizes</h1>
-				</section>
-				<section>
-					<h1><u class="uD0D91F" >Limited</u> available memory</h1>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/head-scratching.gif"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/i-will-find-you.webp"/>
-				</section>
-				<section>
-					<h1>Every <u class="u57D7DB" >huge</u> cloud vendor</h1>
-					<p class="fragment" >AWS started it, and the rest followed</p>
-				</section>
-				<section>
-					<h1>But they're complex and locked in mostly</h1>
-				</section>
-				<section>
-					<h1><a href="https://docs.netlify.com/edge-functions/overview/">Netlify Edge Functions</a></h1>
-					<h1><a href="https://vercel.com/docs/functions/edge-middleware/quickstart">Vercel Edge Functions</a></h1>
-					<h1><a href="https://workers.cloudflare.com/" >Cloudflare Workers</a></h1>
-					<h1><a href="https://deno.com/learn/serverless-functions" >Deno Deploy</a></h1>
-					<h1><a href="https://supabase.com/docs/guides/functions" >Supabase Functions (on Deno Deploy)</a></h1>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/binoculars.webp"/>
-				</section>
-				<section>
-					<h1>Netlify Edge Functions</h1>
-<pre><code>import type { Config, Context } from "@netlify/edge-functions";
-
-export default async (request: Request, context: Context) => {
-	// ...
-};
-
-export const config: Config = {
-	path: "/",
-};
-
-</code></pre>
-				</section>
-				<section>
-					<h1>Supabase Edge Functions</h1>
-<pre><code>// This example shows how to use Edge Functions to read incoming multipart/form-data request,
-// and write files to Supabase Storage and other fields to a database table.
-
-import { Application } from 'https://deno.land/x/oak@v11.1.0/mod.ts'
-import { createClient } from 'jsr:@supabase/supabase-js@2'
-
-const MB = 1024 * 1024
-
-const app = new Application()
-
-app.use(async (ctx) => {
-	const body = ctx.request.body({ type: 'form-data' })
-	const formData = await body.value.read({
-		// Need to set the maxSize so files will be stored in memory.
-		// This is necessary as Edge Functions don't have disk write access.
-		// We are setting the max size as 10MB (an Edge Function has a max memory limit of 150MB)
-		// For more config options, check: https://deno.land/x/oak@v11.1.0/mod.ts?s=FormDataReadOptions
-		maxSize: 10 * MB,
-	})
-	if (!formData.files || !formData.files.length) {
-		ctx.response.status = 400
-		ctx.response.body = 'missing file'
-		return
-	}
-
-	const supabaseClient = createClient(
-		// Supabase API URL - env var exported by default.
-		Deno.env.get('SUPABASE_URL')!,
-		// Supabase API ANON KEY - env var exported by default.
-		Deno.env.get('SUPABASE_ANON_KEY')!
-	)
-
-	//upload image to Storage
-	const file = formData.files[0]
-	const timestamp = +new Date()
-	const uploadName = `${file.name}-${timestamp}`
-	const { data: upload, error: uploadError } = await supabaseClient.storage
-	.from('images')
-	.upload(uploadName, file.content!.buffer, {
-		contentType: file.contentType,
-		cacheControl: '3600',
-		upsert: false,
-	})
-	if (uploadError) {
-		console.error(uploadError)
-		ctx.response.status = 500
-		ctx.response.body = 'Failed to upload the file'
-		return
-	}
-
-	// insert record to messages table
-	const { error } = await supabaseClient.from('comments').insert({
-		message: formData.fields!.message || '',
-		image_path: upload.path,
-	})
-	if (error) {
-		console.error(error)
-		ctx.response.status = 500
-		ctx.response.body = 'Fail to add the record'
-		return
-	}
-
-	ctx.response.status = 201
-	ctx.response.body = 'Success!'
-})
-
-await app.listen({ port: 8000 })
-
-</code></pre>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/gifs/architecture.webp"/>
-				</section>
-				<section>
-					<img class="r-stretch" src="images/dapr.svg" />
-				</section>
-				<section class="template white">
-					<img class="r-stretch" src="images/diagrid.png" />
-				</section>
-				<section class="template white">
-					<img class="r-stretch" src="images/diagrid-flow.png" />
-				</section>
+				
 				<section id="thanks" class="template white">
 					<img src="images/slide-qr-code.png" />
 					<p>Slides: https://ukmadlz.github.io/whats-in-your-toolbox-to-develop-products-devtalks-2025/</p>
