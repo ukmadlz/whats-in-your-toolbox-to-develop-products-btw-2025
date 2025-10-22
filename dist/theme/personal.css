@@ -38,3 +38,19 @@ u.digitalspeed {
     -webkit-text-decoration-color: #E31E24; /* Safari */  
     text-decoration-color: #E31E24;
 }
+/*********************************************
+* FOOTER
+*********************************************/
+.reveal footer, .reveal .footer {
+  z-index: 10000 !important;
+  color: #ccc;
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
+  width: 95%; }
+
+.reveal footer img.digitalspeed, .reveal .footer img.digitalspeed {
+  height: 2em;
+  float: left;
+}
