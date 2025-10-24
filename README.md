@@ -23,7 +23,7 @@ Here is a shortcut list to the referenced technologies
 
 ### API Management
 
-[https://www.gravitee.io](https://www.gravitee.io) [@gravitee-io]<https://github.com/@gravitee-io>)
+[https://www.gravitee.io](https://www.gravitee.io) [@gravitee-io](https://github.com/@gravitee-io)
 [https://tyk.io/](https://tyk.io/) [@TykTechnologies](https://github.com/TykTechnologies)
 
 ### User Behaviour
